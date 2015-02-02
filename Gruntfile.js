@@ -1,4 +1,4 @@
-// Generated on 2014-07-23 using generator-angular 0.9.5
+// Generated on 2014-09-10 using generator-angular 0.9.2
 'use strict';
 
 // # Globbing
@@ -45,8 +45,11 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
+        files: ['app/styles/*.less'], // which files to watch
+        tasks: ['less'],
+        options: {
+          nospawn: true
+        }
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -60,6 +63,20 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
+      }
+    },
+
+
+    // LESS task
+    less: {
+      development: {
+        options: {
+          // paths: ['app/styles']
+        },
+        files: {
+          // target.css file: source.less file
+          'app/styles/style.css': 'app/styles/style.less'
+        }
       }
     },
 
@@ -353,6 +370,8 @@ module.exports = function (grunt) {
     }
   });
 
+	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.registerTask('default', ['less']);
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {

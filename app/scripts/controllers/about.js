@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name projectApp.controller:AboutCtrl
+ * @name angularTrainingApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the projectApp
+ * Controller of the angularTrainingApp
  */
-angular.module('projectApp')
+angular.module('angularTrainingApp')
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

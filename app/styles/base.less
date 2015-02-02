@@ -1,0 +1,132 @@
+/*Breakpoints*/
+@breakPoint1Start: 320px;
+@breakPoint1End: 767px;
+@breakPoint2Start: 768px;
+@breakPoint2End: 1023px;
+@breakPoint3Start: 1024px;
+
+@mobile: ~"screen and (min-width: @{breakPoint1Start}) and (max-width: @{breakPoint1End})";
+@tablet: ~"screen and (min-width: @{breakPoint2Start}) and (max-width: @{breakPoint2End})";
+@desktop: ~"screen and (min-width: @{breakPoint3Start})";
+
+/*Colors*/
+@white: #FFFFFF;
+
+@gray-text: #69747C;
+@lightblue-text: #6794B7;
+
+@lightblue-tag: #b2d4ec;
+@lightblue-menu: #6B9AD0;
+@lightblue-menu-border: #C6DEFA;
+
+/*General styles*/
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	min-width: 320px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/*Vendor*/
+.transform(@arguments) {
+	-webkit-transform: @arguments;
+	-o-transform: @arguments;
+	-moz-transform: @arguments;
+	transform: @arguments;
+}
+
+/*Mixins*/
+.clearfix() {
+	&:after {
+		display: block;
+		height: 0;
+		clear: both;
+		content: "";
+		visibility: hidden;
+	}
+}
+
+.link() {
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.asideMessageTitle() {
+	border-bottom: 4px solid @lightblue-text;
+	color: @lightblue-text;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin: 0 0 15px 0;
+}
+
+.asideMessageBullet(@bullet) {
+	&:before {
+		display: inline-block;
+		width: 25px;
+		margin-right: 12px;
+		padding: 5px 0;
+		background-color: @lightblue-text;
+		content: @bullet;
+		color: @white;
+		font-size: 15px;
+		text-align: center;
+	}
+}
+
+.paragraph() {
+	margin: 0 0 10px 0;
+	line-height: 16px;
+	font-size: 12px;
+	color: @gray-text;
+}
+
+.tag() {
+	color: @white;
+	font-size: 12px;
+	padding: 3px 24px 3px 12px;
+	margin: 0 4px 6px 0;
+	text-decoration: none;
+	display: inline-block;
+	background: @lightblue-text url("../img/tag-bullet.png") no-repeat right 0;
+	&:hover {
+		background-color: @lightblue-tag;
+		background-position: right -22px;
+	}
+	@media @mobile {
+		background: @lightblue-text url("../img/tag-bullet.png") no-repeat right 0;
+		&:hover {
+			background-color: @lightblue-tag;
+			background-position: right -22px;
+		}
+	}
+}
+
+.activeTriangle(@border-color, @main-color) {
+	position: relative;
+	&:before, &:after {
+		position: absolute;
+		content: "";
+		width: 0;
+		height: 0;
+		top: 100%;
+		left: 50%;
+		z-index: 2;
+	}
+	&:before {
+		margin-left: -12px;
+		border-style: solid;
+		border-width: 12px 12px 0 12px;
+		border-color: @border-color transparent transparent transparent;
+	}
+	&:after {
+		margin-left: -6px;
+		border-style: solid;
+		border-width: 7px 6px 0 6px;
+		border-color: @main-color transparent transparent transparent;
+	}
+}
