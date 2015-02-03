@@ -6,7 +6,6 @@
 }
 html,
 body {
-  height: 100%;
   min-width: 320px;
   font-family: 'Open Sans', sans-serif;
 }
@@ -32,6 +31,14 @@ main {
 }
 .content {
   min-height: 100%;
+  margin: 0 0 50px;
+}
+.content-wrapper:after {
+  display: block;
+  height: 0;
+  clear: both;
+  content: "";
+  visibility: hidden;
 }
 header {
   padding: 15px 0;
@@ -46,7 +53,7 @@ header a .logo {
   display: inline-block;
   width: 56px;
   height: 56px;
-  background: url("../img/logo.png") no-repeat;
+  background: url("../images/logo.png") no-repeat;
   vertical-align: middle;
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -78,8 +85,11 @@ nav {
   background-color: #6b9ad0;
   border-bottom: 4px solid #c6defa;
   /*Menu*/
+
   /*Mobile-buttons*/
+
   /*Tablet buttons*/
+
 }
 nav:after {
   display: block;
@@ -237,7 +247,7 @@ nav .mobile-buttons .active:after {
     width: 30px;
     height: 30px;
     margin: 2px;
-    background: #7ca7d9 url("../img/icon-tag.png") no-repeat center;
+    background: #7ca7d9 url("../images/icon-tag.png") no-repeat center;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -247,7 +257,7 @@ nav .mobile-buttons .active:after {
     width: 30px;
     height: 30px;
     margin: 2px;
-    background: url("../img/icon-menu.png") no-repeat center;
+    background: url("../images/icon-menu.png") no-repeat center;
   }
 }
 nav .notice-button,
@@ -375,7 +385,7 @@ aside .message h2 .close {
     display: inline-block;
     width: 18px;
     height: 18px;
-    background: url("../img/icon-fold.png") no-repeat center;
+    background: url("../images/icon-fold.png") no-repeat center;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -473,20 +483,16 @@ aside .message p {
 aside .tags a {
   color: #ffffff;
   font-size: 12px;
-  padding: 3px 24px 3px 12px;
+  padding: 3px 12px;
   margin: 0 4px 6px 0;
   text-decoration: none;
   display: inline-block;
-  background: #6794b7 url("../img/tag-bullet.png") no-repeat right 0;
 }
 aside .tags a:hover {
   background-color: #b2d4ec;
   background-position: right -22px;
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
-  aside .tags a {
-    background: #6794b7 url("../img/tag-bullet.png") no-repeat right 0;
-  }
   aside .tags a:hover {
     background-color: #b2d4ec;
     background-position: right -22px;
@@ -510,11 +516,18 @@ aside .tags .close {
     display: inline-block;
     width: 18px;
     height: 18px;
-    background: url("../img/icon-fold.png") no-repeat center;
+    background: url("../images/icon-fold.png") no-repeat center;
   }
   aside .tags .close:hover {
-    background: url("../img/icon-fold.png") no-repeat center;
+    background: url("../images/icon-fold.png") no-repeat center;
   }
+}
+.view:after {
+  display: block;
+  height: 0;
+  clear: both;
+  content: "";
+  visibility: hidden;
 }
 .posts {
   float: left;
@@ -542,13 +555,13 @@ aside .tags .close {
   .posts .post {
     position: relative;
     padding: 20px 10px 30px;
-    margin: 0;
+    margin: 0 0 30px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .posts .post {
     position: relative;
-    padding: 0 10%;
+    padding: 0 10% 30px;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -557,7 +570,7 @@ aside .tags .close {
     text-align: center;
   }
 }
-.posts .post .preview img {
+.posts .post .preview images {
   width: 100%;
 }
 .posts .post .preview a {
@@ -568,6 +581,9 @@ aside .tags .close {
 }
 .posts .post .preview a:hover {
   text-decoration: underline;
+}
+.posts .post .preview img {
+  width: 100%;
 }
 .posts .author {
   margin-bottom: 15px;
@@ -584,7 +600,7 @@ aside .tags .close {
 }
 .posts .author time {
   padding: 0 20px 0 25px;
-  background: url("../img/clock.png") no-repeat 5px center;
+  background: url("../images/clock.png") no-repeat 5px center;
   font-size: 12px;
   line-height: 24px;
   color: #69747c;
@@ -592,7 +608,7 @@ aside .tags .close {
 .posts .author > a {
   text-decoration: none;
   padding: 0 0 0 20px;
-  background: url("../img/foot.png") no-repeat 0 center;
+  background: url("../images/foot.png") no-repeat 0 center;
   font-size: 12px;
   line-height: 24px;
   color: #69747c;
@@ -627,11 +643,11 @@ aside .tags .close {
 }
 .posts .social a {
   display: inline-block;
-  width: 20px;
-  height: 19px;
+  width: 43px;
+  height: 24px;
   margin: 0 0 0 6px;
-  padding: 5px 0 0 30px;
-  background: url("../img/icons.png") no-repeat;
+  padding: 5px 0 0 23px;
+  background: url("../images/icons.png") no-repeat;
   font-size: 12px;
   line-height: 12px;
   color: #ffffff;
@@ -734,11 +750,39 @@ aside .tags .close {
   z-index: 1002;
   overflow: auto;
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .popup {
+    width: 90%;
+    height: auto;
+    margin: 10% 5% 0;
+    left: 0;
+    top: 10%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .popup {
+    width: 90%;
+    height: auto;
+    margin: 10% 5% 0;
+    left: 0;
+    top: 10%;
+  }
+}
 .popup .field-wrap input,
 .popup .field-wrap textarea {
-  margin: 0 0 20px;
+  margin: 0 0 15px;
   padding: 5px 10px;
   font-size: 15px;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .popup .field-wrap input {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .popup .field-wrap input {
+    width: 100%;
+  }
 }
 .popup .field-wrap label {
   display: block;
@@ -749,4 +793,12 @@ aside .tags .close {
   height: 155px;
   font-family: 'Open Sans', sans-serif;
   resize: none;
+}
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #6b9ad0;
+  text-decoration: none;
+  font-size: 20px;
 }

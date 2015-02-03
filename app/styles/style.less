@@ -15,6 +15,11 @@ main {
 
 .content {
 	min-height: 100%;
+	margin: 0 0 50px;
+}
+
+.content-wrapper {
+	.clearfix();
 }
 
 header {
@@ -28,7 +33,7 @@ header {
 			display: inline-block;
 			width: 56px;
 			height: 56px;
-			background: url("../img/logo.png") no-repeat;
+			background: url("../images/logo.png") no-repeat;
 			vertical-align: middle;
 		}
 		@media @mobile {
@@ -151,7 +156,7 @@ nav {
 				width: 30px;
 				height: 30px;
 				margin: 2px;
-				background: #7CA7D9 url("../img/icon-tag.png") no-repeat center;
+				background: #7CA7D9 url("../images/icon-tag.png") no-repeat center;
 			}
 		}
 		.menu-button {
@@ -161,7 +166,7 @@ nav {
 				width: 30px;
 				height: 30px;
 				margin: 2px;
-				background: url("../img/icon-menu.png") no-repeat center;
+				background: url("../images/icon-menu.png") no-repeat center;
 			}
 		}
 	}
@@ -244,7 +249,7 @@ aside {
 					display: inline-block;
 					width: 18px;
 					height: 18px;
-					background: url("../img/icon-fold.png") no-repeat center;
+					background: url("../images/icon-fold.png") no-repeat center;
 				}
 			}
 			@media @tablet {
@@ -333,13 +338,17 @@ aside {
 				display: inline-block;
 				width: 18px;
 				height: 18px;
-				background: url("../img/icon-fold.png") no-repeat center;
+				background: url("../images/icon-fold.png") no-repeat center;
 				&:hover {
-					background: url("../img/icon-fold.png") no-repeat center;
+					background: url("../images/icon-fold.png") no-repeat center;
 				}
 			}
 		}
 	}
+}
+
+.view {
+	.clearfix();
 }
 
 .posts {
@@ -361,18 +370,18 @@ aside {
 		@media @mobile {
 			position: relative;
 			padding: 20px 10px 30px;
-			margin: 0;
+			margin: 0 0 30px;
 		}
 		@media @tablet {
 			position: relative;
-			padding: 0 10%;
+			padding: 0 10% 30px;
 		}
 		.preview {
 			@media @mobile {
 				background: #E2E5E8;
 				text-align: center;
 			}
-			img {
+			images {
 				width: 100%;
 			}
 			a {
@@ -380,6 +389,9 @@ aside {
 				font-size: 20px;
 				line-height: 34px;
 				color: @gray-text;
+			}
+			img {
+				width: 100%;
 			}
 		}
 	}
@@ -391,7 +403,7 @@ aside {
 		border-bottom: 1px solid #E2E5E8;
 		time {
 			padding: 0 20px 0 25px;
-			background: url("../img/clock.png") no-repeat 5px center;
+			background: url("../images/clock.png") no-repeat 5px center;
 			font-size: 12px;
 			line-height: 24px;
 			color: @gray-text;
@@ -399,7 +411,7 @@ aside {
 		> a {
 			.link();
 			padding: 0 0 0 20px;
-			background: url("../img/foot.png") no-repeat 0 center;
+			background: url("../images/foot.png") no-repeat 0 center;
 			font-size: 12px;
 			line-height: 24px;
 			color: @gray-text;
@@ -424,11 +436,11 @@ aside {
 		}
 		a {
 			display: inline-block;
-			width: 20px;
-			height: 19px;
+			width: 43px;
+			height: 24px;
 			margin: 0 0 0 6px;
-			padding: 5px 0 0 30px;
-			background: url("../img/icons.png") no-repeat;
+			padding: 5px 0 0 23px;
+			background: url("../images/icons.png") no-repeat;
 			font-size: 12px;
 			line-height: 12px;
 			color: @white;
@@ -507,7 +519,6 @@ aside {
 }
 
 .fader {
-//	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -520,7 +531,6 @@ aside {
 	filter: alpha(opacity=30);
 }
 .popup {
-//	display: none;
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -533,15 +543,35 @@ aside {
 	z-index:1002;
 	overflow: auto;
 
+
+	@media @mobile {
+		width: 90%;
+		height: auto;
+		margin: 10% 5% 0;
+		left: 0;
+		top: 10%;
+	}
+	@media @tablet {
+		width: 90%;
+		height: auto;
+		margin: 10% 5% 0;
+		left: 0;
+		top: 10%;
+	}
 	.field-wrap {
 		input, textarea {
-			margin: 0 0 20px;
+			margin: 0 0 15px;
 			padding: 5px 10px;
 			font-size: 15px;
 		}
 
 		input {
-
+			@media @mobile {
+				width: 100%;
+			}
+			@media @tablet {
+				width: 100%;
+			}
 		}
 
 		label {
@@ -557,6 +587,14 @@ aside {
 		}
 	}
 
+	.close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		color: @lightblue-menu;
+		text-decoration: none;
+		font-size: 20px;
+	}
 }
 
 

@@ -1,0 +1,19 @@
+<article class="post">
+	<div class="preview">
+		<img ng-src="{{post.image}}" alt="">
+		<a ng-href="{{post.titleHref}}" ng-bind="post.title"></a>
+	</div>
+	<div class="author">
+		<time ng-bind="post.time"></time>
+		<a ng-href="{{post.authorHref}}" ng-bind="post.author"></a>
+
+		<div class="social">
+			<a href="#" class="facebook">1</a>
+			<a href="#" class="google-plus">2</a>
+			<a href="#" class="twitter">3</a>
+			<a href="#" class="vk">4</a>
+			<a href="#" class="yandex">5</a>
+		</div>
+	</div>
+	<p ng-bind="post.body"></p>
+</article>

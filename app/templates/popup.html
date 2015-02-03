@@ -1,0 +1,38 @@
+<div>
+	<div class="fader" ng-show="showPopup" ng-click="$parent.showPopup = !$parent.showPopup"></div>
+	<div class="popup" ng-show="showPopup">
+		<a href="#" class="close" ng-click="$parent.showPopup = !$parent.showPopup">x</a>
+
+		<form role="form" id="addPost" ng-submit="save(post)">
+			<div class="field-wrap">
+				<label for="post-image">Post image</label>
+				<input type="text" id="post-image" ng-model="post.image" class="post-image" placeholder="Post image (url)" required>
+			</div>
+			<div class="field-wrap">
+				<label for="post-title">Post title</label>
+				<input type="text" id="post-title" ng-model="post.title" class="post-title" placeholder="Post title" required>
+			</div>
+			<div class="field-wrap">
+				<label for="post-page">Post page</label>
+				<input type="text" id="post-page" ng-model="post.page" class="post-title-link" placeholder="Post page (url)" required>
+			</div>
+			<div class="field-wrap">
+				<label for="post-time">Post time</label>
+				<input type="text" id="post-time" ng-model="post.time" class="post-time" placeholder="Add time here" required>
+			</div>
+			<div class="field-wrap">
+				<label for="post-author">Post author</label>
+				<input type="text" id="post-author" ng-model="post.author" class="post-author" placeholder="Author name" required>
+			</div>
+			<div class="field-wrap">
+				<label for="post-author-page">Post author page</label>
+				<input type="text" id="post-author-page" ng-model="post.authorPage" class="post-author-link" placeholder="Author profile (url)" required>
+			</div>
+			<div class="field-wrap">
+				<label for="post-text">Post text</label>
+				<textarea class="post-text" id="post-text" ng-model="post.body" placeholder="Type post text here" required></textarea>
+			</div>
+			<input type="submit" value="Save" ng-disabled="$parent.addPost.$invalid">
+		</form>
+	</div>	
+</div>
