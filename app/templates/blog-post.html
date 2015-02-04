@@ -1,7 +1,7 @@
 <article class="post">
 	<div class="preview">
 		<img ng-src="{{post.image}}" alt="">
-		<a ng-href="{{post.titleHref}}" ng-bind="post.title"></a>
+		<a ng-href="#/post/{{post._id}}" ng-bind="post.title"></a>
 	</div>
 	<div class="author">
 		<time ng-bind="post.time"></time>
@@ -15,7 +15,7 @@
 			<a href="#" class="yandex">5</a>
 		</div>
 	</div>
-	<p ng-bind="post.body"></p>
+	<p ng-bind="post.body | textCut:300"></p>
 	<button class="edit" ng-click="editPost()">Edit</button>
 	<button class="delete" ng-click="deletePost()">Delete</button>
 </article>

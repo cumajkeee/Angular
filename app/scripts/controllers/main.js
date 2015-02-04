@@ -1,18 +1,13 @@
-	app.factory('Post', function($resource) {
-		return $resource('http://54.72.3.96:3000/posts/:_id', {}, {
-			update: {
-				method: 'PUT'
-			}
-		})
-	})
-	.controller('MainCtrl', ['$scope', '$route','Post',
-		function($scope, $route, Post) {
-			$scope.posts = Post.query();
+/*
+	app
+	.controller('MainCtrl', ['$scope', '$route', 'Posts',
+		function($scope, $route, Posts) {
+			$scope.posts = Posts.query();
 			$scope.showPopup = false;
 
 			$scope.addPost = function() {
 				$scope.showPopup = true;
-				$scope.post = new Post();
+				$scope.post = new Posts();
 			};
 
 			$scope.editPost = function() {
@@ -31,14 +26,15 @@
 					});
 				}
 
-				$scope.post = new Post();
+				$scope.post = new Posts();
 				$scope.showPopup = false;
 			};
 
 			$scope.deletePost = function() {
-				Post.delete({_id: this.post._id});
+				Posts.delete({_id: this.post._id});
 				var index = $scope.posts.indexOf(this.post);
 				$scope.posts.splice(index, 1);
 			}
 		}]
 	);
+*/
