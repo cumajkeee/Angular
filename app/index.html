@@ -23,13 +23,13 @@
 			</header>
 			<nav>
 				<div class="mobile-buttons">
-					<a class="about-button active" href="#">?</a>
+					<a class="about-button active" href="#" >?</a>
 					<a class="notice-button" href="#">!</a>
 					<a class="tag-button" href="#"></a>
 					<a class="menu-button" href="#"></a>
 				</div>
-				<a class="about-button active" data-name="about" href="#">?</a>
-				<a class="notice-button" data-name="description" href="#">!</a>
+				<a class="about-button active" data-name="about"> <!--ng-click="showAbout = !showAbout"-->?</a>
+				<a class="notice-button" data-name="description"> <!--ng-click="showNotice = !showNotice" ng-class="showNotice: active"-->!</a>
 				<ul class="menu">
 					<li><a href="#">javascript </a></li>
 					<li><a href="#">css</a></li>
@@ -41,7 +41,7 @@
 			<main>
 				<div class="content-wrapper">
 					<aside>
-						<div class="message about">
+						<div class="message about"> <!--ng-show="showAbout"-->
 							<h2 class="question">About<a href="#" class="close"></a></h2>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda consectetur deserunt dolore
@@ -50,7 +50,7 @@
 								saepe ut veniam vero. Explicabo necessitatibus nobis nostrum sint soluta tempore! Tempore!
 							</p>
 						</div>
-						<div class="message description">
+						<div class="message description"> <!--ng-show="showNotice"-->
 							<h2 class="warning">Some shit<a href="#" class="close"></a></h2>
 
 							<p>

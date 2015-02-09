@@ -85,11 +85,8 @@ nav {
   background-color: #6b9ad0;
   border-bottom: 4px solid #c6defa;
   /*Menu*/
-
   /*Mobile-buttons*/
-
   /*Tablet buttons*/
-
 }
 nav:after {
   display: block;
@@ -421,13 +418,13 @@ aside .message.about h2:before {
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   aside .message.about h2 {
-    top: 33px;
-    left: -33px;
+    top: 43px;
+    left: -42px;
     -webkit-transform: rotate(270deg);
     -o-transform: rotate(270deg);
     -moz-transform: rotate(270deg);
     transform: rotate(270deg);
-    padding: 9px 30px 10px 10px;
+    padding: 8px 10px;
   }
   aside .message.about h2:before {
     display: none;
@@ -456,13 +453,13 @@ aside .message.description h2:before {
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   aside .message.description h2 {
-    top: 26px;
-    right: -53px;
+    top: 43px;
+    right: -42px;
     -webkit-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     transform: rotate(90deg);
-    padding: 9px 10px 10px 30px;
+    padding: 8px 10px;
   }
   aside .message.description h2:before {
     display: none;
@@ -570,7 +567,7 @@ aside .tags .close {
     text-align: center;
   }
 }
-.posts .post .preview images {
+.posts .post .preview image {
   width: 100%;
 }
 .posts .post .preview a {

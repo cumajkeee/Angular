@@ -15,7 +15,8 @@
 			<a href="#" class="yandex">5</a>
 		</div>
 	</div>
-	<p ng-bind="post.body | textCut:300"></p>
+	<!--<p ng-bind="post.body | textCut:300"></p>-->
+	<p ng-bind="post.body"></p>
 	<button class="edit" ng-click="editPost()">Edit</button>
 	<button class="delete" ng-click="deletePost()">Delete</button>
 </article>

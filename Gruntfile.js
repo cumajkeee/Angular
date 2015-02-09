@@ -33,6 +33,10 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
+      stylesheets: {
+        files: ['<%= yeoman.app %>/styles//**/*.less' ],
+        tasks: ['less']
+      },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
@@ -60,6 +64,17 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
+      }
+    },
+
+    // Less compile to CSS
+    less: {
+      development: {
+        options: {
+          concat: false
+        },
+        src:  '<%= yeoman.app %>/styles/style.less',
+        dest: '<%= yeoman.app %>/styles/style.css'
       }
     },
 
@@ -419,6 +434,7 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'newer:jshint',
     'test',
-    'build'
+    'build',
+    'less'
   ]);
 };
